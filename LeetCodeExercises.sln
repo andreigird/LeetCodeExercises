@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "80-Remove-Duplicates-from-S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "169-Majority-Element", "169-Majority-Element\169-Majority-Element.csproj", "{AF545972-693B-42ED-84F1-C96FF70C9317}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "189_Rotate_Array", "189_Rotate_Array\189_Rotate_Array.csproj", "{B02B7F97-FDFF-4AEC-B82B-DC7C16F8F96B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AF545972-693B-42ED-84F1-C96FF70C9317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF545972-693B-42ED-84F1-C96FF70C9317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF545972-693B-42ED-84F1-C96FF70C9317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02B7F97-FDFF-4AEC-B82B-DC7C16F8F96B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02B7F97-FDFF-4AEC-B82B-DC7C16F8F96B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02B7F97-FDFF-4AEC-B82B-DC7C16F8F96B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02B7F97-FDFF-4AEC-B82B-DC7C16F8F96B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
