@@ -3,46 +3,49 @@
 using System;
 using System.Runtime.CompilerServices;
 
-public class Program
+namespace _27_Remove_Element
 {
-    public int RemoveElement(int[] nums, int val)
+    public class Program
     {
-        var count = 0;
-
-        var i = 0;
-        foreach (var number in nums)
+        public int RemoveElement(int[] nums, int val)
         {
-            if (number == val)
-            {
-                nums[i] = 255;
-                i++;
-                count++;
+            var count = 0;
 
-            }
-            else
+            var i = 0;
+            foreach (var number in nums)
             {
-                i++;
+                if (number == val)
+                {
+                    nums[i] = 255;
+                    i++;
+                    count++;
+
+                }
+                else
+                {
+                    i++;
+                }
             }
+            Array.Sort(nums);
+
+            var finalCount = nums.Length - count;
+
+            return finalCount;
         }
-        Array.Sort(nums);
+        static void Main(string[] args)
+        {
+            int[] nums = [3, 2, 2, 3];
+            var val = 3;
 
-        var finalCount = nums.Length - count;
+            Console.WriteLine("START of program:");
+            foreach (var number in nums) { Console.Write(number + " "); }
 
-        return finalCount;
-    }
-    static void Main(string[] args)
-    {
-        int[] nums = [3, 2, 2, 3];
-        var val = 3;
+            var result = new Program().RemoveElement(nums, val);
 
-        Console.WriteLine("START of program:");
-        foreach (var number in nums) { Console.Write(number + " "); }
+            Console.WriteLine("Result is: " + result);
+            Console.WriteLine("End of program:");
+            foreach (var number in nums) { Console.Write(number + " "); }
 
-        var result = new Program().RemoveElement(nums, val);
-
-        Console.WriteLine("Result is: " + result);
-        Console.WriteLine("End of program:");
-        foreach (var number in nums) { Console.Write(number + " "); }
-
+        }
     }
 }

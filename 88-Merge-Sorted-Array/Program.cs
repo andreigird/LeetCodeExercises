@@ -48,81 +48,84 @@
 
 
 //Start of program
-class Program
+namespace _88_Merge_Sorted_Array
 {
-    public static int[] Merge(int[] nums1, int m, int[] nums2, int n)
+    class Program
     {
-
-        var j = 0;
-
-        for (var i = m; i < nums1.Length; i++)
+        public static int[] Merge(int[] nums1, int m, int[] nums2, int n)
         {
 
-            nums1[i] = nums2[j];
-            j++;
+            var j = 0;
+
+            for (var i = m; i < nums1.Length; i++)
+            {
+
+                nums1[i] = nums2[j];
+                j++;
+
+            }
+
+            Array.Sort(nums1);
+            return nums1;
 
         }
-
-        Array.Sort(nums1);
-        return nums1;
-
-    }
-    private static void Main(string[] args)
-    {
-        Console.WriteLine("Please enter the values of the 1st array.\nPlease take into account to separate the values with a ','. ");
-        Console.Write("1st array: ");
-
-        var input = Console.ReadLine();
-
-        if (String.IsNullOrWhiteSpace(input)) { throw new ArgumentNullException(); }
-
-        var inputArray = input.Split(",");
-
-        int[] intArray = new int[inputArray.Length];
-        var i = 0;
-        foreach (var number in inputArray)
+        private static void Main(string[] args)
         {
-            intArray[i] = int.Parse(number); i++;
+            Console.WriteLine("Please enter the values of the 1st array.\nPlease take into account to separate the values with a ','. ");
+            Console.Write("1st array: ");
+
+            var input = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(input)) { throw new ArgumentNullException(); }
+
+            var inputArray = input.Split(",");
+
+            int[] intArray = new int[inputArray.Length];
+            var i = 0;
+            foreach (var number in inputArray)
+            {
+                intArray[i] = int.Parse(number); i++;
+            }
+
+
+            int[] nums1 = intArray;
+            var m = nums1.Length;
+
+            Console.WriteLine("Please enter the values of the 2nd array.\nPlease take into account to separate the values with a ','. ");
+            Console.Write("2nd array: ");
+
+            input = Console.ReadLine();
+
+            Console.WriteLine("\nProcessing...");
+
+            if (string.IsNullOrWhiteSpace(input)) { throw new ArgumentNullException(); }
+
+            inputArray = input.Split(",");
+
+            intArray = new int[inputArray.Length];
+            i = 0;
+            foreach (var number in inputArray)
+            {
+                intArray[i] = int.Parse(number); i++;
+            }
+
+
+            int[] nums2 = intArray;
+            var n = nums2.Length;
+
+            Array.Resize(ref nums1, nums1.Length + nums2.Length);
+
+            var resultArray = Merge(nums1, m, nums2, n);
+            Console.WriteLine("\n");
+            Console.Write("The final resulting array is: [ ");
+            foreach (var number in resultArray)
+            {
+
+                Console.Write(number + " ");
+            }
+            Console.Write("]");
+
         }
-
-
-        int[] nums1 = intArray;
-        var m = nums1.Length;
-
-        Console.WriteLine("Please enter the values of the 2nd array.\nPlease take into account to separate the values with a ','. ");
-        Console.Write("2nd array: ");
-
-        input = Console.ReadLine();
-
-        Console.WriteLine("\nProcessing...");
-
-        if (String.IsNullOrWhiteSpace(input)) { throw new ArgumentNullException(); }
-
-        inputArray = input.Split(",");
-
-        intArray = new int[inputArray.Length];
-        i = 0;
-        foreach (var number in inputArray)
-        {
-            intArray[i] = int.Parse(number); i++;
-        }
-
-
-        int[] nums2 = intArray;
-        var n = nums2.Length;
-
-        Array.Resize(ref nums1, nums1.Length + nums2.Length);
-
-        var resultArray = (Merge(nums1, m, nums2, n));
-        Console.WriteLine("\n");
-        Console.Write("The final resulting array is: [ ");
-        foreach (var number in resultArray)
-        {
-
-            Console.Write(number + " ");
-        }
-        Console.Write("]");
-
     }
 }
 // End of program

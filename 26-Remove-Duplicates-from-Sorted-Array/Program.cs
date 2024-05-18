@@ -7,32 +7,35 @@
 //The remaining elements of nums are not important as well as the size of nums.
 //Return k.
 
-class Program
+namespace _26_Remove_Duplicates_from_Sorted_Array
 {
-    public int RemoveDuplicates(int[] nums)
+    class Program
     {
-        var k = 1;
-        var currentNumberTested = nums[0];
-        for (int i = 1; i < nums.Length; i++)
+        public int RemoveDuplicates(int[] nums)
         {
-            if (nums[i] == currentNumberTested)
+            var k = 1;
+            var currentNumberTested = nums[0];
+            for (int i = 1; i < nums.Length; i++)
             {
-                nums[i] = 255;
+                if (nums[i] == currentNumberTested)
+                {
+                    nums[i] = 255;
+                }
+                else { k++; currentNumberTested = nums[i]; }
             }
-            else { k++; currentNumberTested = nums[i]; }
+            Array.Sort(nums);
+            return k;
         }
-        Array.Sort(nums);
-        return k;
-    }
-    static void Main(string[] args)
-    {
-        int[] nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-        var k = new Program().RemoveDuplicates(nums);
-        Console.WriteLine("No. of unique numbers: " + k);
-        Console.WriteLine("Final array result...");
-        foreach (int i in nums)
+        static void Main(string[] args)
         {
-            Console.Write(i + ", ");
+            int[] nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+            var k = new Program().RemoveDuplicates(nums);
+            Console.WriteLine("No. of unique numbers: " + k);
+            Console.WriteLine("Final array result...");
+            foreach (int i in nums)
+            {
+                Console.Write(i + ", ");
+            }
         }
     }
 }
